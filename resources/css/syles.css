@@ -421,3 +421,27 @@ header h1 {
         padding: 20px;
     }
 }
+
+@media (min-width: 768px) {
+    #carouselAdmisiones .carousel-inner {
+        height: 218px;
+    }
+}
+@media (max-width: 767.98px) {
+    #carouselAdmisiones .carousel-inner {
+        height: 160px; /* opcional: altura más baja en móviles */
+    }
+}
+.carousel-fix-height {
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .carousel-fix-height {
+        height: 218px;
+    }
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}

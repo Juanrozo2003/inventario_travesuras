@@ -6,10 +6,28 @@ use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\MovementController;
 
+
 // Rutas públicas
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/academico', function () {
+    return view('pages.academico.index');
+})->name('academico');
+
+Route::get('/admisiones', function () {
+    return view('pages.admisiones.index');
+})->name('admisiones');
+
+Route::get('/nosotros', function () {
+    return view('pages.nosotros.index');
+})->name('nosotros'); // Asegúrate de tener esta vista
+
+Route::get('/contactanos', function () {
+    return view('pages.contacto.contacto');
+})->name('contactanos');
+
 
 // Autenticación (desactivé el registro como sugerí antes)
 Auth::routes(['register' => false]);

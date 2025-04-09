@@ -46,4 +46,47 @@
         </div>
     </div>
 </div>
+
+<section class="container my-5">
+    <div class="row align-items-center">
+        <!-- Texto de Misión y Visión -->
+        <div class="col-md-6 text-center text-md-start">
+            <h2>MISIÓN</h2>
+            <p>Formar personas íntegras y competentes a través de una educación innovadora, inclusiva y de calidad, preparándolas para los retos del futuro.</p>
+            <h2>VISIÓN</h2>
+            <p>Ser reconocidos como un referente educativo que inspira el crecimiento personal, académico y social de nuestros estudiantes.</p>
+        </div>
+        <!-- Imagen del colegio -->
+        <div class="col-md-6 text-center">
+            <img src="{{ asset('images/ColegioTravesuras.jpeg') }}" alt="Colegio Travesuras" class="img-fluid shadow">
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Valores -->
+<section class="values container my-5">
+    <h2 class="text-center mb-4">NUESTROS VALORES</h2>
+    <div class="row text-center">
+        <div class="col-md-2 col-6 mb-4">
+            <img src="{{ asset('images/Honestidad.jpeg') }}" alt="Honestidad" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
+            <p>Honestidad en la sinceridad y/o veracidad</p>
+        </div>
+        <div class="col-md-2 col-6 mb-4">
+            <img src="{{ asset('images/Justicia.png') }}" alt="Justicia" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
+            <p>Justicia en la igualdad y armonía en nuestra sociedad</p>
+        </div>
+        <div class="col-md-2 col-6 mb-4">
+            <img src="{{ asset('images/responsabilidad.png') }}" alt="Responsabilidad" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
+            <p>Responsabilidad en el cumplimiento de sus deberes</p>
+        </div>
+        <div class="col-md-2 col-6 mb-4">
+            <img src="{{ asset('images/Libertad.png') }}" alt="Libertad" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
+            <p>Libertad con plena responsabilidad</p>
+        </div>
+        <div class="col-md-2 col-6 mb-4">
+            <img src="{{ asset('images/Solidaridad.jpg') }}" alt="Solidaridad" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
+            <p>Solidaridad buscando el bien común</p>
+        </div>
+    </div>
+</section>
 @endsection

@@ -14,16 +14,16 @@
                         <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('academico') ? 'active' : '' }}" href="#">Académico</a>
+                        <a class="nav-link {{ request()->is('academico') ? 'active' : '' }}" href="{{ route('academico') }}">Académico</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('admisiones') ? 'active' : '' }}" href="#">Admisiones</a>
+                        <a class="nav-link {{ request()->is('admisiones') ? 'active' : '' }}" href="{{ route('admisiones') }}">Admisiones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('nosotros') ? 'active' : '' }}" href="#">Nosotros</a>
+                        <a class="nav-link {{ request()->is('nosotros') ? 'active' : '' }}" href="{{ route('nosotros') }}">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('contactanos') ? 'active' : '' }}" href="#">Contáctanos</a>
+                        <a class="nav-link {{ request()->is('contactanos') ? 'active' : '' }}" href="{{ route('contactanos') }}">Contáctanos</a>
                     </li>
                 </ul>
             </nav>
@@ -53,16 +53,16 @@
                     <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('academico') ? 'active' : '' }}" href="#">Académico</a>
+                    <a class="nav-link {{ request()->is('academico') ? 'active' : '' }}" href="{{ route('academico') }}">Académico</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('admisiones') ? 'active' : '' }}" href="#">Admisiones</a>
+                    <a class="nav-link {{ request()->is('admisiones') ? 'active' : '' }}" href="{{ route('admisiones') }}">Admisiones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('nosotros') ? 'active' : '' }}" href="#">Nosotros</a>
+                    <a class="nav-link {{ request()->is('nosotros') ? 'active' : '' }}" href="{{ route('nosotros') }}">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('contactanos') ? 'active' : '' }}" href="#">Contáctanos</a>
+                    <a class="nav-link {{ request()->is('contactanos') ? 'active' : '' }}" href="{{ route('contactanos') }}">Contáctanos</a>
                 </li>
             </ul>
         </div>
