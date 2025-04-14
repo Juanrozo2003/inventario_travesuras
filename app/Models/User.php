@@ -24,6 +24,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'rol', 
+
     ];
 
     /**
@@ -50,4 +52,22 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    public function isRectora() {
+        return $this->rol === 'rectora';
+    }
+    
+    public function isSecretaria() {
+        return $this->rol === 'secretaria';
+    }
+    
+    public function isContador() {
+        return $this->rol === 'contador';
+    }
+    
+    public function isDocente() {
+        return $this->rol === 'docente';
+    }
+    
 }
