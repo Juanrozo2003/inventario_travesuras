@@ -1,7 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.inventario')
 
 @section('content')
-@include('components.sidebar')
 
 <div class="container">
     <h1>Bienvenida, Docente</h1>

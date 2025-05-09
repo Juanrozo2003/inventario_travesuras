@@ -1,8 +1,7 @@
 {{-- resources/views/secretaria/dashboard.blade.php --}}
-@extends('layouts.app')
+@extends('layouts.inventario')
 
 @section('content')
-@include('components.sidebar')
 
 <div class="container">
     <h1>Bienvenida, Secretaria</h1>

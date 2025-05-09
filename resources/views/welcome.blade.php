@@ -7,7 +7,9 @@
     <div class="container">
         <h1>Bienvenido al Colegio Travesuras</h1>
         <p>Una institución educativa comprometida con la excelencia académica y la formación integral de nuestros estudiantes.</p>
-        <a href="{{ route('login') }}" class="btn btn-primary btn-lg">Acceso al Sistema</a>
+        <a href="{{ auth()->check() ? route('redirect.dashboard') : route('login') }}" class="btn btn-primary btn-lg">
+            Acceso al Sistema
+        </a>
     </div>
 </div>
 

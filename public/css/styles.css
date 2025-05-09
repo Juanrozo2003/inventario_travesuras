@@ -377,48 +377,192 @@ header h1 {
 }
 
 /* ======================== */
-/* 6. RESPONSIVE DESIGN */
+/* 6. RESPONSIVE DESIGN MEJORADO */
 /* ======================== */
-@media (max-width: 992px) {
-    .header-title {
-        font-size: 1.2rem;
-    }
-    
-    .nav-link {
-        padding: 0.5rem !important;
-    }
-}
 
+/* Dispositivos medianos: Tablets (≤768px) */
 @media (max-width: 768px) {
-    body {
-        padding-top: 70px;
+    .home-hero {
+        padding: 60px 20px;
+        text-align: center;
     }
-    
-    .header-title {
-        font-size: 1rem;
-    }
-    
-    .header-logo {
-        height: 40px;
-    }
-    
+
     .home-hero h1 {
         font-size: 2rem;
+        line-height: 1.2;
     }
-    
+
     .home-hero p {
         font-size: 1rem;
     }
-}
 
-@media (max-width: 576px) {
-    .header-title {
-        display: none;
+    .feature-cards .row {
+        flex-direction: column;
+        gap: 20px;
     }
-    
-    .login-container {
-        margin: 30px 15px;
+
+    .card-body {
         padding: 20px;
     }
+
+    .header-fixed {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
 }
+
+/* Dispositivos pequeños: Móviles (≤576px) */
+@media (max-width: 576px) {
+    .home-hero {
+        padding: 40px 15px;
+    }
+
+    .home-hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .home-hero p {
+        font-size: 0.95rem;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .header-fixed {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .header-logo {
+        height: 35px;
+    }
+
+    .footer-content {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px;
+    }
+
+    .sidebar .nav-link {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+}
+
+
+/* ======================== */
+/* 7. SIDEBAR RESPONSIVO */
+/* ======================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 60px 0 0; /* Espacio para el header fijo */
+    width: 250px;
+    background-color: #0033A0;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    z-index: 1030;
+}
+
+.sidebar .nav-link {
+    color: white;
+    padding: 15px 20px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: #00257a;
+    color: #FFD700;
+    font-weight: 700;
+}
+
+.sidebar .nav-link i {
+    font-size: 1.2rem;
+}
+
+/* Estilo para el contenido principal cuando el sidebar está presente */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+/* RESPONSIVE SIDEBAR */
+
+@media (max-width: 992px) {
+    .sidebar {
+        left: -250px;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .main-content.shifted {
+        margin-left: 250px;
+    }
+
+    .sidebar-toggle-btn {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 1050;
+        background-color: #0033A0;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar-toggle-btn:hover {
+        background-color: #00257a;
+    }
+
+    .navbar-collapse {
+            flex-grow: 0;
+        }
+    }
+    .navbar-nav .nav-link {
+        padding-left: 1rem;
+    }
 

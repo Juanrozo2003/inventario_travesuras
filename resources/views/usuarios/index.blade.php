@@ -1,43 +1,61 @@
-@extends('layouts.app')
+@extends('layouts.inventario')
 
 @section('content')
-<div>
-        @include('components.sidebar')
-    </div>
-<div class="container">
-    <h1>Gestión de Usuarios</h1>
-    <a href="{{ route('usuarios.create') }}" class="btn btn-primary mb-3">Crear Usuario</a>
+<div class="container my-4">
+    <h1 class="mb-4">Gestión de Usuarios</h1>
 
     @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+        </div>
     @endif
 
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Rol</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($usuarios as $usuario)
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <a href="{{ route('usuarios.create') }}" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Crear Usuario
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-light">
                 <tr>
-                    <td>{{ $usuario->name }}</td>
-                    <td>{{ $usuario->email }}</td>
-                    <td>{{ $usuario->rol }}</td>
-                    <td>
-                        <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-warning btn-sm">Editar</a>
-                        <form action="{{ route('usuarios.destroy', $usuario->id) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger btn-sm" onclick="return confirm('¿Eliminar este usuario?')">Eliminar</button>
-                        </form>
-                    </td>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                    <th class="text-center">Acciones</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @forelse($usuarios as $usuario)
+                    <tr>
+                        <td>{{ $usuario->name }}</td>
+                        <td>{{ $usuario->email }}</td>
+                        <td>{{ ucfirst($usuario->rol) }}</td>
+                        <td class="text-center">
+                            <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-sm btn-warning me-1">
+                                <i class="bi bi-pencil-square"></i> Editar
+                            </a>
+
+                            @if(auth()->check() && auth()->user()->rol === 'rectora')
+                                <form action="{{ route('usuarios.destroy', $usuario->id) }}" method="POST" class="d-inline-block" onsubmit="return confirm('¿Está segura de eliminar este usuario?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger">
+                                        <i class="bi bi-trash"></i> Eliminar
+                                    </button>
+                                </form>
+                            @endif
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="4" class="text-center">No hay usuarios registrados.</td>
+                    </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
 </div>
 @endsection

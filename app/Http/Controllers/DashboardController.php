@@ -18,6 +18,8 @@ class DashboardController extends Controller
             return view('dashboard.contador');
         } elseif ($user->isDocente()) {
             return view('dashboard.docente');
+        } elseif ($user->isContador()) {
+            return view('dashboard.contador');
         } else {
             abort(403, 'Acceso no autorizado');
         }

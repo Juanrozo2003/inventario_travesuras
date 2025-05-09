@@ -9,11 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('salidas', function (Blueprint $table) {
-            $table->id();
+            $table->id('idSalida');
+            $table->unsignedBigInteger('idProducto');
+            $table->integer('cantidad');
+            $table->date('fechaSalida');
+            $table->string('motivo');
+            $table->text('observaciones')->nullable();
             $table->timestamps();
+    
+            $table->foreign('idProducto')->references('idProduct')->on('products')->onDelete('cascade');
         });
     }
 

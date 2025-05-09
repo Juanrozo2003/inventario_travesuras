@@ -1,11 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.inventario')
 
 @section('content')
 <div class="d-flex">
-    {{-- SIDEBAR visible en todos los tamaños (ajustable con media queries si lo deseas) --}}
-    <div>
-        @include('components.sidebar')
-    </div>
+
 
     {{-- CONTENIDO PRINCIPAL --}}
     <div class="flex-grow-1 p-4" style="margin-left: 280px;">

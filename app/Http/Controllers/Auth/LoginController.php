@@ -42,6 +42,8 @@ class LoginController extends Controller
                 return redirect()->route('contador.dashboard');
             case 'docente':
                 return redirect()->route('docente.dashboard');
+            case 'contador':
+                    return redirect()->route('contador.dashboard');
             default:
                 Auth::logout();
                 return redirect('/login')->withErrors(['rol' => 'Rol no reconocido.']);

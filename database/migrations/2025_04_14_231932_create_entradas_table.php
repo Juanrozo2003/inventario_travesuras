@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('entradas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('producto_id')->constrained()->onDelete('cascade');
+            $table->integer('cantidad');
+            $table->string('motivo')->nullable();
             $table->timestamps();
         });
     }
